@@ -20,34 +20,31 @@ class Flag{
 
 	static Path = curvedRectanglePath(35,35,5);
 
+	static Data = [
+		[Flag.Cake, "orange"],
+		[Flag.Flower, "purple"],
+		[Flag.Glasses, "black"],
+		[Flag.Hat, "red"],
+		[Flag.Jewelry, "yellow"],
+		[Flag.Pet, "red"],
+		[Flag.Spikes, "gray"],
+		[Flag.Spots, "green"],
+		[Flag.Stripes, "aqua"],
+		[Flag.Tail, "grey"],
+		[Flag.Tea, "blue"],
+		[Flag.Teeth, "white"]
+	]
+
 	static drawFlags(context, flags){
 		context.save();
 		context.translate(14, 299);
 		context.lineWidth = 2;
-		if(flags & Flag.Cake){
-			context.strokeStyle = "orange";
-			context.stroke(Flag.Path);
-			context.translate(37,0);
-		}
-		if(flags & Flag.Flower){
-			context.strokeStyle = "orange";
-			context.stroke(Flag.Path);
-			context.translate(37,0);
-		}
-		if(flags & Flag.Hat){
-			context.strokeStyle = "red";
-			context.stroke(Flag.Path);
-			context.translate(37,0);
-		}
-		if(flags & Flag.Jewelry){
-			context.strokeStyle = "yellow";
-			context.stroke(Flag.Path);
-			context.translate(37,0);
-		}
-		if(flags & Flag.Tea){
-			context.strokeStyle = "blue";
-			context.stroke(Flag.Path);
-			context.translate(37,0);
+		for(d in Flag.Data){
+			if(flags & d[0]){
+				context.strokeStyle = d[1];
+				context.stroke(Flag.Path);
+				context.translate(37,0);
+			}
 		}
 		context.restore();
 	}
