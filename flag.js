@@ -40,8 +40,8 @@ class Flag{
 		context.translate(14, 299);
 		context.lineWidth = 2;
 		for(let d in Flag.Data){
-			if(flags & d[0]){
-				context.strokeStyle = d[1];
+			if(flags & Flag.Data[d][0]){
+				context.strokeStyle = Flag.Data[d][1];
 				context.stroke(Flag.Path);
 				context.translate(37,0);
 			}
