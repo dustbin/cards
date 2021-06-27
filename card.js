@@ -2,8 +2,9 @@ class Card{
 	static OuterPath = curvedRectanglePath(250,350,10);
 	static NamePath = curvedRectanglePath(230,30,7);
 	static FlagsPath = curvedRectanglePath(230,45,7);
-	constructor(name,flags){
+	constructor(name,image,flags){
 		this.name = name;
+		this.image = image;
 		this.flags = flags;
 	}
 	
@@ -11,6 +12,9 @@ class Card{
 		this.drawCard(context);
 		this.drawText(context);
 		Flag.drawFlags(context, this.flags);
+	}
+	drawImage(context){
+		context.drawImage(this.image, 10, 50, 230, 230);
 	}
 	drawCard(context){
 		context.save();
