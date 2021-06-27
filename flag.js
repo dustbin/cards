@@ -39,7 +39,7 @@ class Flag{
 		context.save();
 		context.translate(14, 299);
 		context.lineWidth = 2;
-		for(d in Flag.Data){
+		for(let d in Flag.Data){
 			if(flags & d[0]){
 				context.strokeStyle = d[1];
 				context.stroke(Flag.Path);
