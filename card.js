@@ -26,6 +26,7 @@ class Card{
 			context.fillStyle = "purple";
 		}
 		context.fill(Card.OuterPath);
+		this.drawImage(context);
 		context.fillStyle = "white";
 		context.translate(10, 10);
 		context.fill(Card.NamePath);
