@@ -9,12 +9,14 @@
 		canvas.height = window.innerHeight;
 		let context = canvas.getContext("2d");
 		let img = new Image();
+		img.onload = function(){
+			let c = new Card("Amelia", img, Flag.Purple|Flag.Tea|Flag.Hat|Flag.Jewelry);
+			context.save();
+			context.translate(50, 50);
+			c.draw(context);
+			context.restore();
+		};
 		img.src = "horse.png";
-		let c = new Card("Amelia", img, Flag.Purple|Flag.Tea|Flag.Hat|Flag.Jewelry);
-		context.save();
-		context.translate(50, 50);
-		c.draw(context);
-		context.restore();
 	};
 	</script>
 	<script src="util.js"></script>
