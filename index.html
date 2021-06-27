@@ -8,7 +8,9 @@
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
 		let context = canvas.getContext("2d");
-		let c = new Card("Amelia", new Image("horse.png"), Flag.Purple|Flag.Tea|Flag.Hat|Flag.Jewelry);
+		let img = new Image();
+		img.src = "horse.png";
+		let c = new Card("Amelia", img, Flag.Purple|Flag.Tea|Flag.Hat|Flag.Jewelry);
 		context.save();
 		context.translate(50, 50);
 		c.draw(context);
