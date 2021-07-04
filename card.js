@@ -2,12 +2,23 @@ class Card{
 	static OuterPath = curvedRectanglePath(250,350,10);
 	static NamePath = curvedRectanglePath(230,30,7);
 	static FlagsPath = curvedRectanglePath(230,45,7);
-	constructor(name,image,flags){
+	constructor(name, color, image, flags, attack, defense){
 		this.name = name;
-		this.image = image;
+		this.color = color;
+		this.setImage(image);
 		this.flags = flags;
+		this.attack = attack;
+		this.defense = defense;
 	}
-	
+	setImage(image){
+		this.image = new Image();
+		this.image.parentCard = this
+		this.image.onload = function(){
+			this.parentCard.loaded = true;
+		};
+		image.src = image;
+	}
+
 	draw(context){
 		this.drawCard(context);
 		this.drawText(context);
@@ -18,13 +29,7 @@ class Card{
 	}
 	drawCard(context){
 		context.save();
-		if(this.flags & Flag.Green){
-			context.fillStyle = "green";
-		}else if(this.flags & Flag.Orange){
-			context.fillStyle = "orange";
-		}else{
-			context.fillStyle = "purple";
-		}
+		context.fillStyle = this.color;
 		context.fill(Card.OuterPath);
 		this.drawImage(context);
 		context.fillStyle = "white";
