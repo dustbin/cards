@@ -8,8 +8,8 @@ class Flag{
 
 	static Data = [
 		[Flag.Mount, "orange"],
-		[Flag.Fast, "yellow"]
-		[Flag.Healer, "red"]
+		[Flag.Fast, "yellow"],
+		[Flag.Healer, "red"],
 		[Flag.StartTapped, "grey"]
 	]
 
