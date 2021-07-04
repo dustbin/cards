@@ -16,7 +16,7 @@ class Card{
 		this.image.onload = function(){
 			this.parentCard.loaded = true;
 		};
-		image.src = image;
+		this.image.src = image;
 	}
 
 	draw(context){
